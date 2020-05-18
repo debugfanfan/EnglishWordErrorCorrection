@@ -4,18 +4,20 @@ def edit_distance(s1, s2):
     print("s1的值:", s1)
     print("s2的值:", s2)
     # s1 长度m
+    m = len(s1)
     # s2 长度n
+    n = len(s2)
     # 如果m = 0，则至少还需要操作n次，即在s1中逐个添加s2的字符
-    if len(s1) == 0:
-        if len(s2) > 0:
-            return len(s2)
+    if m == 0:
+        if n > 0:
+            return n
         else:
             return 0
     # 如果n = 0，则至少还需要操作m次，即在s1中逐个删除字符
     # 如果m =0，n = 0，则不需要再操作
-    if len(s2) == 0:
-        if len(s1) > 0:
-            return len(s1)
+    if n == 0:
+        if m > 0:
+            return m
         else:
             return 0
 

@@ -31,10 +31,10 @@ def write_correct_paragraph(i):
             if word not in punkt_list:
 
                 p.add_run(' ')
-                # 修改单词，如果单词正确，则返回原单词
+                # 纠正单词，如果单词正确，则返回原单词
                 correct_word = correct_text_generic(word)
 
-                # 每一句话第一个单词的第一个字母大写，并空两格
+                # 每一句话第一个单词的第一个字母大写
                 if word_list.index(word) == 0 and words_list.index(word_list) == 0:
                     correct_word = correct_word[0].upper() + correct_word[1:]
 

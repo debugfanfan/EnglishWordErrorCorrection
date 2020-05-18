@@ -1,7 +1,8 @@
 import re, collections
 
 
-# 获取所有单词并转为小写形式,text示例："The Project Gutenberg EBook of The Adventures of Sherlock Holmes\nby Sir Arthur Conan Doyle"
+# text中所有单词转为小写形式并匹配
+# text示例："The Project Gutenberg EBook of The Adventures of Sherlock Holmes\nby Sir Arthur Conan Doyle"
 def tokens(text):
     return re.findall("[a-z]+", text.lower())
 
@@ -13,9 +14,10 @@ with open('big.txt', 'r') as f:
 word_counts = collections.Counter(words)
 
 
+# text示例：'fianlly helloa'
 def correct_text_generic(text):
     """
-    在匹配中纠正所有拼写错误的单词
+    纠正匹配到的单词中所有拼写错误的单词
     """
     return re.sub('[a-zA-Z]+', correct_match, text)
 
@@ -79,7 +81,7 @@ def edits1(word):
 
     def splits(word):
         """
-            分割单词    以cat为例：  ("","cat")  ("c","at")  ("ca","")   ("cat","")
+            分割单词    以cta为例：  ("","cat")  ("c","at")  ("ca","")   ("cat","")
         """
         return [(word[:i], word[i:])
                 for i in range(len(word) + 1)]
@@ -109,6 +111,6 @@ def edits2(word):
 
 
 if __name__ == '__main__':
-    original_word = 'fianlly'
+    original_word = 'fianlly helloa cta'
     correct_word = correct_text_generic(original_word)
     print('Original word:%s\nCorrect word:%s' % (original_word, correct_word))
