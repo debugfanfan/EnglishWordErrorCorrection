@@ -1,6 +1,6 @@
 # 英文单词纠错（English word error correction）
 利用单词纠错算法和Python脚本，自动纠正word中的英语单词拼写错误
-
+##### 博客：https://blog.csdn.net/qq_39393772/article/details/106179763
 
 ## 错误文本
 
