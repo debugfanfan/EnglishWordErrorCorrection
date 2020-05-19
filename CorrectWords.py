@@ -1,3 +1,6 @@
+# Author    : 不凡不弃
+# Datetime  : 2020/5/19 0019 20:53
+# description   : 纠正单词
 import re, collections
 
 

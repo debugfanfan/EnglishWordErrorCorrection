@@ -1,3 +1,6 @@
+# Author    : 不凡不弃
+# Datetime  : 2020/5/19 0019 20:53
+# description   : 纠正word文档中的单词
 from docx import Document
 from nltk import sent_tokenize, word_tokenize
 from CorrectWords import correct_text_generic
